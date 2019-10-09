@@ -41,7 +41,7 @@
         else{
           $.ajax({
             type:"POST",
-            url:"http://spartacodingclub.shop/order",
+            url:"/order",
             data:{name_give:name, count_give:count, address_give:address, phone_give:phone, item_give:item},
             success: function(response){
               if(response['result']=='success'){
@@ -75,7 +75,7 @@
       function listing(){
         $.ajax({
           type: "GET",
-          url:"http://spartacodingclub.shop/order?item_give=홈셔츠",
+          url:"/order?item_give=홈셔츠",
           data:{},
           success: function(response){
             if(response['result']=='success'){
@@ -98,13 +98,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Oswald:200,300,400,500,600,700&display=swap&subset=korean" rel="stylesheet">
     
     <!--CSS 분리-->
-    <link rel = "stylesheet" type = "text/css" href = "css/index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">      
 
-      <a class="navbar-brand" href="#"><img src="logo/ars_logo.gif" width="25" height="30" alt=""> Gunner's Mall</a>
+      <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='logo/ars_logo.gif') }}" width="25" height="30" alt=""> Gunner's Mall</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -121,7 +121,7 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mens</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mens</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">NEW IN</a>
               <a class="dropdown-item" href="#">Sale</a>
@@ -133,7 +133,7 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Womens</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Womens</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">NEW IN</a>
             <a class="dropdown-item" href="#">Sale</a>
@@ -154,7 +154,7 @@
         </form>
 
         <div class="btn-group">
-          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><img src="../logo/user_icon.gif" width="15" height="18" alt=""> User<span class="carnet"></span></a>
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><img src="{{ url_for('static', filename='logo/user_icon.gif') }}" width="15" height="18" alt=""> User<span class="carnet"></span></a>
              <ul class="dropdown-menu">
                 <a class="dropdown-item" href="#">Login</a>
                 <div class="dropdown-divider"></div>
@@ -178,15 +178,15 @@
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="img/ars_jumbo.jpg" alt="First slide">
+                  <img class="d-block w-100" src="{{ url_for('static', filename='img/ars_jumbo.jpg') }}" alt="First slide">
                 </div>
           
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/ars_jumbo1.jpg" alt="Second slide">
+                  <img class="d-block w-100" src="{{ url_for('static', filename='img/ars_jumbo1.jpg') }}" alt="Second slide">
                 </div>
           
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="img/ars_jumbo2.jpg" alt="Third slide">
+                  <img class="d-block w-100" src="{{ url_for('static', filename='img/ars_jumbo2.jpg') }}" alt="Third slide">
                 </div>
               </div>
             
@@ -272,7 +272,7 @@
         <h2 class="card-deck-head"style="border-bottom: 3px solid red">Another Product</h2>
         <div class="card-deck col-xs-12 py-2">
           <div class="col-xs-3 col-md-3 card"><!--사진 크기 670*1000px 고정-->
-            <img src="img/laca1.jpg" class="card-img-top" alt="이미지를 불러올 수 없습니다.">
+            <img src="{{ url_for('static', filename='img/laca1.jpg') }}" class="card-img-top" alt="이미지를 불러올 수 없습니다.">
             <div class="card-body">
               <h5 class="card-title">Home KIT 19/20</h5>
               <p class="card-text">The new Arsenal training home kit 19/20 is realesed with Adidas.</p>
@@ -281,7 +281,7 @@
           </div>
   
           <div class="col-xs-3 col-md-3 card">
-            <img src="img/ozil_away.jpg" class="card-img-top" alt="이미지를 불러올 수 없습니다.">
+            <img src="{{ url_for('static', filename='img/ozil_away.jpg') }}" class="card-img-top" alt="이미지를 불러올 수 없습니다.">
             <div class="card-body">
               <h5 class="card-title">Away KIT 19/20</h5>
               <p class="card-text">The new Arsenal training away kit 19/20 is realesed with Adidas.</p>
@@ -290,7 +290,7 @@
           </div>
   
           <div class="col-xs-3 col-md-3 card">
-            <img src="img/lucas_third1.jpg" class="card-img-top" alt="이미지를 불러올 수 없습니다.">
+            <img src="{{ url_for('static', filename='img/lucas_third1.jpg') }}" class="card-img-top" alt="이미지를 불러올 수 없습니다.">
             <div class="card-body">
               <h5 class="card-title">Third KIT 19/20</h5>
               <p class="card-text">The new Arsenal training third kit 19/20 is realesed with Adidas.</p>
@@ -299,7 +299,7 @@
           </div>
 
           <div class="col-xs-3 col-md-3 card">
-            <img src="img/leno.jpg" class="card-img-top" alt="이미지를 불러올 수 없습니다.">
+            <img src="{{ url_for('static', filename='img/leno.jpg') }}" class="card-img-top" alt="이미지를 불러올 수 없습니다.">
             <div class="card-body">
               <h5 class="card-title">Goalkeeper KIT 19/20</h5>
               <p class="card-text">The new Arsenal training goalkeeper kit 19/20 is realesed with Adidas.</p>
@@ -319,15 +319,7 @@
               <th scope="col">전화번호</th>
             </tr>
           </thead>
-          <tbody id="order-box">
-            <tr>
-              <td>홈셔츠</td>
-              <td>오현택</td>
-              <td>2</td>
-              <td>인천광역시</td>
-              <td>010-1234-1234</td>
-            </tr>
-          </tbody>
+          <tbody id="order-box"></tbody>
         </table>
       </div>
     </div>
@@ -336,7 +328,7 @@
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
       <div class="row">
         <div class="col-12 col-md">
-          <img class="mb-2" src="logo/iconmonstr-rocket-3.svg" alt="" width="24" height="24">
+          <img class="mb-2" src="{{ url_for('static', filename='logo/iconmonstr-rocket-3.svg')}}" alt="" width="24" height="24">
           <small class="d-block mb-3 text-muted">© 2019 spartacodingclub 3</small>
         </div>
         <div class="col-6 col-md">

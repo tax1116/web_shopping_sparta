@@ -1,0 +1,44 @@
+<style type="text/css">   
+  
+  *{
+    	font-family: 'Nanum gothic', sans-serif;
+    	box-sizing: border-box;
+   }
+
+	body{
+		font-family: 'Oswald', sans-serif;
+
+	}
+
+	.product-header{
+		text-shadow : grey 0.2em 0.2em 0.2em;
+	}
+
+	.col-xs-12{
+		float: left;
+		width: 100%;
+	}
+
+	.product-info-wrapper{
+		padding: 0px 10px 10px 10px;
+	}
+
+	.info-box-text{
+		margin: 12px;
+		text-align: center;
+	}
+	
+	.info-quantity{
+		margin: 12px;
+	}
+	.info-user{
+		margin: 12px;
+	}
+	.info-price{
+		margin: 12px;
+	}
+
+	div{
+		display: block;
+	}
+</style>
